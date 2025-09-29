@@ -47,7 +47,12 @@ export default function LoginScreen() {
       <CustomButton text="Login" onPress={onLoginPress} />
 
       {/* Extra info */}
-      <Text style={styles.footerText}>Don’t have an account? Sign up</Text>
+      <Text
+        style={styles.footerText}
+        onPress={() => router.replace('../(pages)/signup')}
+      >
+        Don’t have an account? Sign up
+      </Text>
     </View>
   );
 }
