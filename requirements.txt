@@ -1,0 +1,4 @@
+#npm run reset-project
+
+#Local Storage = npm i @react-native-async-storage/async-storage
+#gradients = npx expo install expo-linear-gradient
