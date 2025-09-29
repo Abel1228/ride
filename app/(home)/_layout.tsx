@@ -11,7 +11,7 @@ export class HomeLayout extends Component {
 
   render() {
     return (
-      <SafeAreaView>
+      <SafeAreaView style={{backgroundColor: '#ec1818ff'}}>
         {/* Header with back button */}
         <View style={{ flexDirection: 'row', alignItems: 'center', padding: 16 }}>
           <TouchableOpacity onPress={this.handleBack}>
