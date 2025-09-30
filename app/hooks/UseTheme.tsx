@@ -1,5 +1,7 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { createContext, ReactNode, useContext, useEffect, useState } from "react";
+import { StatusBar } from "react-native";
+
 //AsyncStorage is used to persist data locally on the device, 
 // allowing you to store key-value pairs and retrieve them later, 
 // even after the app is closed or restarted.
@@ -97,6 +99,7 @@ interface ThemeContextType {
 const ThemeContext = createContext<undefined | ThemeContextType>(undefined);
 
 
+
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -117,6 +120,8 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
   return (
     <ThemeContext.Provider value={{ isDarkMode, toogleDarkMode: toggleDarkMode, colors }}>
+            <StatusBar barStyle={colors.statusBarStyle} backgroundColor={colors.bg} />
+
       {children}
     </ThemeContext.Provider>
   );

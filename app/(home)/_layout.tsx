@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
-import { Text, View, TouchableOpacity, Animated, Dimensions } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
+import React, { Component } from 'react';
+import { Animated, Dimensions, Text, TouchableOpacity, View } from 'react-native';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
@@ -115,7 +114,9 @@ export class HomeLayout extends Component {
             }}
           >
             {/* Profile Photo */}
-            <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>  
+            <View style={{ minHeight:150 ,flexDirection: 'row', justifyContent: 'center', alignItems: 'center'
+            // , borderWidth: 1, borderColor: '#f50808ff', borderStyle: 'solid' 
+            }}>  
             <View 
               style={{
                 width: 56,
@@ -126,12 +127,15 @@ export class HomeLayout extends Component {
                 backgroundColor: '#555',
                 justifyContent: 'center',
                 alignItems: 'center',
+                // borderWidth: 1, borderColor: '#f50808ff', borderStyle: 'solid' 
               }}
             >
               <Ionicons name="person" size={36} color="#fff" />
               {/* Or use <Image source={require('...')} style={{width: 56, height: 56}} /> for real photo */}
             </View>
-            <View style={{ flex: 1, paddingTop: 100 }}>
+            <View style={{ 
+              // borderWidth: 1, borderColor: '#f50808ff', borderStyle: 'solid', height: 'auto'  
+              }}>
               <Text style={{ color: '#fff', fontSize: 18, fontWeight: 'bold' }}>John Doe</Text>
               <TouchableOpacity>
                 <Text style={{ color: '#4fc3f7', fontSize: 14, marginTop: 4 }}>View Profile</Text>
