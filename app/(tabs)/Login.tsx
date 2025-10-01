@@ -15,7 +15,7 @@ export default function LoginScreen() {
   const onLoginPress = () => {
     // placeholder for login action
     console.log("Logging in with:", email, password);
-    router.replace('/(home)/details');
+    router.replace('/(home)');
   };
 
   return (
