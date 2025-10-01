@@ -1,9 +1,9 @@
 // screens/LoginScreen.tsx
-import { useState } from "react";
-import { Image, View, Text, StyleSheet } from "react-native";
-import CustomInput from "../../components/customInput";
-import CustomButton from "../../components/CustomButton";
 import { useRouter } from 'expo-router';
+import { useState } from "react";
+import { Image, StyleSheet, Text, View } from "react-native";
+import CustomButton from "../../components/CustomButton";
+import CustomInput from "../../components/customInput";
 
 export default function LoginScreen() {
   // states to hold email and password values

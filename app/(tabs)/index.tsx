@@ -1,11 +1,10 @@
 import Header from '@/components/Header';
+import TodoInput from '@/components/Inputs_my';
+import { LinearGradient } from 'expo-linear-gradient';
+import { Text, TouchableOpacity } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { createHomeStyles } from '../../assets/styles/home.style';
 import UseTheme from '../hooks/UseTheme';
-import { LinearGradient } from 'expo-linear-gradient';
-import { StatusBar, Text, TouchableOpacity } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import TodoInput from '@/components/TodoInput';
-import LoadingSpinner from '@/components/LoadingSpinner';
 
 export default function Index() {
   const {toogleDarkMode, colors} = UseTheme();
@@ -13,7 +12,6 @@ export default function Index() {
   const todos = useQuery();
   const isLoading = todos === undefined;
 
-  if(false) return <LoadingSpinner />;
 
   return (
     <LinearGradient colors={colors.gradients.background} style={homeStyles.container}>
