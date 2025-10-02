@@ -137,7 +137,9 @@ export class HomeLayout extends Component {
               // borderWidth: 1, borderColor: '#f50808ff', borderStyle: 'solid', height: 'auto'  
               }}>
               <Text style={{ color: '#fff', fontSize: 18, fontWeight: 'bold' }}>John Doe</Text>
-              <TouchableOpacity>
+              <TouchableOpacity
+            onPress={() => router.replace('/(pages)/profile')}
+              >     
                 <Text style={{ color: '#4fc3f7', fontSize: 14, marginTop: 4 }}>View Profile</Text>
               </TouchableOpacity>
             </View>
@@ -145,9 +147,38 @@ export class HomeLayout extends Component {
             </View>
           </View>
           {/* Sidebar options below */}
-          <Text style={{ color: '#fff', fontSize: 18, margin: 16, marginTop: 24 }}>Sidebar Option 1</Text>
-          <Text style={{ color: '#fff', fontSize: 18, margin: 16 }}>Sidebar Option 2</Text>
-          <Text style={{ color: '#fff', fontSize: 18, margin: 16 }} onPress={this.handleBack}>Logout</Text>
+          <TouchableOpacity
+            style={{ flexDirection: 'row', alignItems: 'center', margin: 16 }}
+            onPress={() => router.replace('/(pages)/settings')}
+          >
+            <Ionicons name="settings-outline" size={20} color="#fff" style={{ marginRight: 8 }} />
+            <Text style={{ color: '#fff', fontSize: 18 }}>Setting</Text>
+          </TouchableOpacity>
+          
+           <TouchableOpacity
+            style={{ flexDirection: 'row', alignItems: 'center', margin: 16 }}
+            onPress={() => router.replace('/(pages)/OrderHistory')}
+          >
+            <Ionicons name="repeat-outline" size={20} color="#fff" style={{ marginRight: 8 }} />
+            <Text style={{ color: '#fff', fontSize: 18 }}>Order History</Text>
+          </TouchableOpacity>
+
+           <TouchableOpacity
+            style={{ flexDirection: 'row', alignItems: 'center', margin: 16 }}
+            onPress={() => router.replace('/(pages)/support')}
+          >
+            <Ionicons name="help-circle-outline" size={20} color="#fff" style={{ marginRight: 8 }} />
+            <Text style={{ color: '#fff', fontSize: 18 }}>Support</Text>
+          </TouchableOpacity>
+
+           <TouchableOpacity
+            style={{ flexDirection: 'row', alignItems: 'center', margin: 16 }}
+            onPress={this.handleBack}
+          >
+            <Ionicons name="log-out-outline" size={20} color="#fff" style={{ marginRight: 8 }} />
+            <Text style={{ color: '#fff', fontSize: 18 }}>Logout</Text>
+          </TouchableOpacity>
+
         </Animated.View>
       </>
     );

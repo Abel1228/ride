@@ -3,7 +3,7 @@ import { router } from 'expo-router';
 import React, { Component } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 
-export class settingsScreen extends Component {
+export class orderHisrory extends Component {
    handleBack = () => {
           router.replace('/(home)');
 
@@ -14,11 +14,11 @@ export class settingsScreen extends Component {
         <TouchableOpacity style={{ margin: 16, flexDirection: 'row', alignItems: 'center' }} onPress={this.handleBack} accessibilityLabel="Back">
           <Ionicons name="arrow-back" size={22} color="#000000ff" style={{ marginRight: 6 }} />
         </TouchableOpacity>
-        <Text> settingsScreen </Text>
+        <Text> Order History Screen </Text>
 
       </View>
     )
   }
 }
 
-export default settingsScreen
+export default orderHisrory

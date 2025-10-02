@@ -7,14 +7,14 @@ import CustomInput from "../../components/customInput";
 
 export default function LoginScreen() {
   // states to hold email and password values
-  const [email, setEmail] = useState("");
+  const [phoneNo, setphoneNo] = useState("");
   const [password, setPassword] = useState("");
 
   const router = useRouter();
 
   const onLoginPress = () => {
     // placeholder for login action
-    console.log("Logging in with:", email, password);
+    console.log("Logging in with:", phoneNo, password);
     router.replace('/(home)');
   };
 
@@ -31,25 +31,25 @@ export default function LoginScreen() {
 
       {/* Input fields */}
       <CustomInput
-        placeholder="Email"
-        value={email}
-        setValue={setEmail}
-        keyboardType="email-address"
+        placeholder="Phone Number"
+        value={phoneNo}
+        setValue={setphoneNo}
+        keyboardType="phone-pad"
       />
-      <CustomInput
+      {/* <CustomInput
         placeholder="Password"
         value={password}
         setValue={setPassword}
         secureTextEntry
-      />
+      /> */}
 
       {/* Login button */}
-      <CustomButton text="Login" onPress={onLoginPress} />
+      <CustomButton text="Next" onPress={onLoginPress} />
 
       {/* Extra info */}
       <Text
         style={styles.footerText}
-        onPress={() => router.replace('../(pages)/signup')}
+        onPress={() => router.replace('../(pages)/signup_OTP')}
       >
         Don’t have an account? Sign up
       </Text>
