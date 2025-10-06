@@ -14,7 +14,7 @@ export class HomeLayout extends Component {
   };
 
   handleBack = () => {
-    router.replace('/(tabs)/Login');
+    router.replace('/login');
   };
 
   toggleSidebar = () => {

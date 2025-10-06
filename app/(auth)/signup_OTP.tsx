@@ -59,7 +59,7 @@ export default function SignupOTP() {
         {/* Footer text */}
         <Text
           style={styles.footerText}
-          onPress={() => router.replace('/(tabs)/Login')}
+          onPress={() => router.replace('/login')}
         >
           Already have an account? Login
         </Text>

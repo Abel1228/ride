@@ -1,15 +1,17 @@
 // screens/LoginScreen.tsx
 import { useRouter } from 'expo-router';
 import { useState } from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View, Switch } from "react-native";
 import CustomButton from "../../components/CustomButton";
 import CustomInput from "../../components/customInput";
+import { useTheme } from "../../contexts/ThemeContext";
+import { StatusBar } from "expo-status-bar";
 
-export default function LoginScreen() {
+export default function loginScreen() {
   // states to hold email and password values
   const [phoneNo, setphoneNo] = useState("");
   const [password, setPassword] = useState("");
-
+  const { isDark, toggleTheme } = useTheme(); // 👈 access dark mode state
   const router = useRouter();
 
   const onLoginPress = () => {
@@ -19,7 +21,19 @@ export default function LoginScreen() {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[
+      styles.container,
+      { backgroundColor: isDark ? "#000" : "#fff" }, // dynamic background
+      ]}>
+          {/* Theme toggle */}
+      <View style={{top: 20 , position: 'absolute', right: 10, flexDirection: 'row', alignItems: 'center'}}>
+        <Text style={{ color: isDark ? "#fff" : "#000", marginRight: 8 }}>
+          {isDark ? "Dark Mode" : "Light Mode"}
+        </Text>
+        <Switch value={isDark} onValueChange={toggleTheme} />
+      </View>
+      {/* ✅ Fix white status bar icons */}
+      <StatusBar style={isDark ? "light" : "dark"} />
       {/* App logo */}
       <Image
         source={require("../../assets/images/favicon.png")} // put a logo image inside assets
@@ -60,7 +74,7 @@ export default function LoginScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#000", // dark theme
+    // backgroundColor: "#000", // dark theme
     justifyContent: "center",
     alignItems: "center",
     padding: 20,
@@ -73,9 +87,14 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: "600",
-    color: "#fff",
+    // color: "#fff",
     marginBottom: 20,
   },
+   toggleContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginTop: 20,
+   },
   footerText: {
     color: "#aaa",
     marginTop: 20,

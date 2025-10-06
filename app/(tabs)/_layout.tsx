@@ -25,9 +25,9 @@ const TabsLayout = () => {
       }}
       >
         <Tabs.Screen
-          name="Login"
+          name="login"
           options={{
-            title: 'Login',
+            title: 'Login page',
             tabBarIcon: ({color, size})=>(
               <Ionicons name='log-in-outline' size={size} color={color}/>
             ),
