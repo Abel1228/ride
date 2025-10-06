@@ -5,21 +5,22 @@ import { Image, SafeAreaView, StyleSheet, Text, View } from "react-native";
 import CustomButton from "../../components/CustomButton";
 import CustomInput from "../../components/customInput";
 
-export default function SignupOTP() {
-  // const [Firstname, setFirstName] = useState("");
-  // const [LastName, setLastName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [OTP, setOTP] = useState("");
+export default function SignupScreen() {
+  const [Firstname, setFirstName] = useState("");
+  const [LastName, setLastName] = useState("");
+  // const [phone, setPhone] = useState("");
+  // const [OTP, setOTP] = useState("");
   const router = useRouter();
 
   const onSignupPress = () => {
+    router.replace('/(home)')
     // placeholder for signup action
-    console.log("Signing up 1st...:", { 
-      // name: Firstname, 
-      // email: LastName, 
-      phone, 
-      password: OTP });
-      router.replace('/(pages)/signup_OTP2')
+    console.log("Signing up...:", { 
+      name: Firstname, 
+      email: LastName, 
+      // phone, 
+      // password: OTP 
+      });
   };
 
   return (
@@ -32,37 +33,35 @@ export default function SignupOTP() {
           resizeMode="contain"
         />
 
-        <Text style={styles.title}>Welcome to Ride</Text>
-        <Text style={styles.footerText}>Enter your mobile number to sign In</Text>
+        <Text style={styles.title}>Create your account</Text>
 
         {/* Input fields */}
-        
-        {/* <View style={{flexDirection: 'row', width: '100%', justifyContent: 'space-between'}}> */}
+        <CustomInput placeholder="First Name" value={Firstname} setValue={setFirstName} />
         <CustomInput
+          placeholder="Last Name"
+          value={LastName}
+          setValue={setLastName}
+        />
+        {/* <CustomInput
           placeholder="Phone Number"
           value={phone}
           setValue={setPhone}
           keyboardType="phone-pad"
         />
-        <CustomButton text="Next" onPress={onSignupPress} />
-        {/* </View> */}
-
-        {/* <CustomInput
-          placeholder=""
+        <CustomInput
+          placeholder="Password"
           value={OTP}
           setValue={setOTP}
           secureTextEntry
-        />
+        /> */}
 
-        <CustomButton text="Next" onPress={onSignupPress} /> */}
-
-        {/* Footer text */}
-        <Text
+        <CustomButton text="Sign Up" onPress={onSignupPress} />
+        {/* <Text
           style={styles.footerText}
           onPress={() => router.replace('/(tabs)/Login')}
         >
           Already have an account? Login
-        </Text>
+        </Text> */}
       </View>
     </SafeAreaView>
   );

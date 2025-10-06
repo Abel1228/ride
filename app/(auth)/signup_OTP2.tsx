@@ -18,7 +18,7 @@ const OtpScreen = ({ navigation, route }: any) => {
   }, [timer]);
 
   const onVerify = () => {
-    router.replace('/(pages)/signup')
+    router.replace('/(auth)/signup')
     console.log("Entered OTP:", code);
     // TODO: Call API for verification
   };

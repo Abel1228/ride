@@ -49,7 +49,7 @@ export default function LoginScreen() {
       {/* Extra info */}
       <Text
         style={styles.footerText}
-        onPress={() => router.replace('../(pages)/signup_OTP')}
+        onPress={() => router.replace('../(auth)/signup_OTP')}
       >
         Don’t have an account? Sign up
       </Text>
